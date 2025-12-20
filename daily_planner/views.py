@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForm
 
@@ -25,5 +25,5 @@ def new_task(request):
     
     # Display a blank or invalid form.
     context = {'form': form}
-    return render(request, "learning_logs/new_task.html", context)
+    return render(request, "daily_planner/new_task.html", context)
     

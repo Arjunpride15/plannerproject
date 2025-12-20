@@ -6,5 +6,5 @@ class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = ["title", "description", "date", "is_completed"]
-        labels = {'title': "Title: ", "description": "Description: ", "date": "Deadline: ", "is_completed": "Is Completed? "}
+        labels = {'title': "Title ", "description": "Description ", "date": "Deadline ", "is_completed": "Is Completed? "}
         widgets = {'description': forms.Textarea(attrs={'cols': 100})}
