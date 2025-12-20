@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<head>
+  <title>Daily Planner</title>
+  
+</head>
+<p>
+  <a href="{% url 'daily_planner:index' %}">Daily Planner</a> -
+  <a href="{% url 'daily_planner:tasks' %}">Tasks</a>
+  <hr>
+</p>
+{% block content %}{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'daily_planner/base.html' %}
+
+{% block content %}
+
+  <p>Task: {{  task.title  }}</p>
+
+  <p>
+    
+    <p>Deadline : {{  task.date|date:'M d, Y'  }}</p>
+    {% if task.description != "" %}
+    <p>Description : {{  task.description|linebreaks  }}</p>
+    {% else %}
+    <p>No description has been provided</p>
+    {% endif %}
+    <p>Date created: {{  task.created_at|date:'M d, Y H:i'}}</p>
+
+  </p>
+{% endblock content %}

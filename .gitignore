@@ -1,0 +1,6 @@
+dp_env/
+dp_project/__pycache__/
+*.sqlite3
+django-shell.ps1
+run.ps1
+daily_planner/__pycache__/

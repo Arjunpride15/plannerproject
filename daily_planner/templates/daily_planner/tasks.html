@@ -1,0 +1,14 @@
+{% extends 'daily_planner/base.html' %}
+
+{% block content %}
+  <h3>Tasks</h3>
+  <ul>
+    {% for task in tasks %}
+      <li>
+        <a href="{% url 'daily_planner:task' task.id %}"> {{  task.title  }}</a>
+      </li>
+    {% empty %}
+      <pre>No tasks have been added yet.</pre>
+    {% endfor %}
+  </ul>
+{% endblock content %}
