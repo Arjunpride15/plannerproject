@@ -12,5 +12,7 @@ urlpatterns = [
     # Page that shows all tasks
     path('tasks/', views.tasks, name='tasks'),
     # Detailed page that shows info about a specific task
-    path('tasks/<int:task_id>/', views.task, name='task')
+    path('tasks/<int:task_id>/', views.task, name='task'),
+    # Page for adding a task
+    path('new_task/', views.new_task, name="new_task")
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Task
+from .forms import TaskForm
 
 def index(request):
     return render(request, 'daily_planner/index.html')
@@ -11,3 +12,18 @@ def task(request, task_id):
     task = Task.objects.get(id=task_id)
     context = {'task': task}
     return render(request, 'daily_planner/task.html', context)
+def new_task(request):
+    """Add a task"""
+    if not request.method == "POST":
+        form = TaskForm()
+    else:
+        form = TaskForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('daily_planner:tasks')
+    
+    
+    # Display a blank or invalid form.
+    context = {'form': form}
+    return render(request, "learning_logs/new_task.html", context)
+    

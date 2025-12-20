@@ -1,0 +1,11 @@
+{% extends "daily_planner/base.html" %}
+{% block content %}
+
+<h3>Add a new task:</h3>
+<form action="{% url 'daily_planner:new_task' %}" method="post">
+    {% csrf_token %}
+    {{  form.as_div  }}
+    <button name="submit">Add Task</button>
+
+</form>
+{% endblock content %}
