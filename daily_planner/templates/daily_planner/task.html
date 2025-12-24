@@ -15,4 +15,7 @@
     <p>Date created: {{  task.created_at|date:'M d, Y H:i'}}</p>
 
   </p>
+  <p>
+  <a href="{% url 'daily_planner:edit_task' task.id %}">Edit this task&#x2026;</a>
+  </p>
 {% endblock content %}

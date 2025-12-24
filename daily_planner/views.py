@@ -26,4 +26,19 @@ def new_task(request):
     # Display a blank or invalid form.
     context = {'form': form}
     return render(request, "daily_planner/new_task.html", context)
+
+def edit_task(request, task_id):
+    """Edit an existing task"""
+    task = Task.objects.get(id=task_id)
     
+    if not request.method == "POST":
+        form = TaskForm(instance=task)
+    else:
+        form = TaskForm(instance=task, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('daily_planner:tasks')
+    context = {"task": task, "form": form}
+    return render(request, 'daily_planner/edit_task.html', context)
+
+        
