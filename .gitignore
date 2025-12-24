@@ -5,3 +5,5 @@ django-shell.ps1
 run.ps1
 daily_planner/__pycache__/
 daily_planner/migrations/
+accounts/__pycache__/
+accounts/migrations/
