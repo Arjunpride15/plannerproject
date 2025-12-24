@@ -5,7 +5,12 @@
 </head>
 <p>
   <a href="{% url 'daily_planner:index' %}">Daily Planner</a> -
-  <a href="{% url 'daily_planner:tasks' %}">Tasks</a>
+  <a href="{% url 'daily_planner:tasks' %}">Tasks</a> -
+  {% if user.is_authenticated %}
+    Hi, {{  user.username  }}
+  {% else %}
+    <a href="{% url 'accounts:login' %}">Log in</a>
+  {% endif %}
   <hr>
 </p>
 {% block content %}{% endblock content %}
