@@ -130,3 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # My settings
 LOGIN_REDIRECT_URL = 'daily_planner:index'
 LOGOUT_REDIRECT_URL = 'daily_planner:index'
+LOGIN_URL = 'accounts:login'
