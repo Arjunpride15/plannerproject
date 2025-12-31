@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     # My apps:
     'daily_planner',
     'accounts',
+    # The Bootstrap Library
+    'django_bootstrap5',
     # Default apps:
     'django.contrib.admin',
     'django.contrib.auth',
