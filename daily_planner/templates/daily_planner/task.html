@@ -1,22 +1,19 @@
 {% extends 'daily_planner/base.html' %}
-
+{% block page_header %}
+<h2 class="aqua-font p-2 display-6">{{  task.title  }}</h2>
+{% endblock page_header %}
 {% block content %}
-
-  <p>Task: {{  task.title  }}</p>
-
-  <p>
-    
-    <p>Deadline : {{  task.date|date:'M d, Y'  }}</p>
+<div class="card" style="width: 60vw;">
+  <div class="card-body">
+    <h5 class="card-title p-2 border-bottom">{{  task.date|date:'M d, Y'  }}</h5>
     {% if task.description != "" %}
-    <p>Description : {{  task.description|linebreaks  }}</p>
+    <p class="card-text">{{  task.description|linebreaks  }}</p>
     {% else %}
-    <p>No description has been provided</p>
+    <p class="card-text">No description has been provided</p>
     {% endif %}
-    <p>Date created: {{  task.created_at|date:'M d, Y H:i'}}</p>
-    <p>Is completed? {{  task.is_completed  }}</p>
-
-  </p>
-  <p>
-  <a href="{% url 'daily_planner:edit_task' task.id %}">Edit this task&#x2026;</a>
-  </p>
+    <p class="card-text p-1">Date created: {{  task.created_at|date:'M d, Y H:i'}}</p>
+    <p class="card-text p-1">Is completed? {{  task.is_completed  }}</p>
+    <a href="{% url 'daily_planner:edit_task' task.id %}" class="card-link">Edit task&#x2026;</a>
+  </div>
+</div>
 {% endblock content %}
