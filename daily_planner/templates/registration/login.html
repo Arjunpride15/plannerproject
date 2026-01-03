@@ -1,15 +1,19 @@
 {% extends 'daily_planner/base.html' %}
 
+
+{% load django_bootstrap5 %}
+
+
+{% block page_header %}
+<h2 class="aqua-font p-2">Log in to your account.</h2>
+{% endblock page_header %}
+
 {% block content %}
-
-  {% if form.errors %}
-    <p>Sorry! Looks like your username and password didn't match. Please try again</p>
-  {% endif %}
-
+  <div class="pb-4">
   <form action="{% url 'accounts:login' %}" method="POST">
     {% csrf_token %}
-    {{  form.as_div  }}
-
-    <button name="submit">Log in</button>
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Log in" %}
   </form>
+  </div>
 {% endblock content %}

@@ -1,15 +1,22 @@
 {% extends "daily_planner/base.html" %}
 
+
+{% load django_bootstrap5 %}
+
+
+{% block page_header %}
+<h3 class="aqua-font p-3"><a href="{% url 'daily_planner:task' task.id %}" class="link-info">{{  task  }}</a></h3>
+<h4 class="p-2">Edit task:</h4>
+
+{% endblock page_header %}
+
 {% block content %}
 
-  <p><a href="{% url 'daily_planner:task' task.id %}">{{  topic  }}</a></p>
-
-  <h3>Edit task:</h3>
 
   <form action="{% url 'daily_planner:edit_task' task.id %}" method="POST">
     {% csrf_token %}
-    {{  form.as_div  }}
-    <button name="submit">Save Task</button>
-
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Save task..." %}
+    
   </form>
 {% endblock content %}
