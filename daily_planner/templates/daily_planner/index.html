@@ -1,9 +1,16 @@
 {% extends 'daily_planner/base.html' %}
 
 
-{% block content %}
-<h1 style="color: rgb(0, 255, 213)">Daily Planner</h1>
-<p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Daily Planner is a web application that helps you plan your tasks effectively.
-Get started now!<p style="color: rgb(0, 255, 213); font: 1em sans-serif;">&raquo;</p>
-</p>
-{% endblock content %}
+{% block page_header %}
+  <div>
+    <div class="card text-center mb-3" style="width: 65vw;">
+        <div class="card-body">
+          <h1 class="display-3 aqua-font">Plan your day.</h1>
+          <p class="lead">Make your own tasks, write a description about it, and put a deadline. Mark your topics with a complete or 
+            incomplete status. Work seamlessly with Daily Planner.
+          </p>
+          <a href="{% url 'accounts:register' %}" class="btn btn-info btn-lg mt-1">Register &raquo;</a>
+        </div>
+      </div>
+  </div>
+{% endblock page_header %}
