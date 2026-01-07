@@ -1,0 +1,16 @@
+asgiref==3.11.0
+brotli==1.2.0
+click==8.3.1
+colorama==0.4.6
+dj-database-url==3.1.0
+Django==5.2.9
+django-bootstrap5==25.3
+gunicorn==23.0.0
+h11==0.16.0
+packaging==25.0
+psycopg2-binary==2.9.11
+sqlparse==0.5.4
+tastyerrors==2025.0.2
+tzdata==2025.2
+uvicorn==0.40.0
+whitenoise==6.11.0
