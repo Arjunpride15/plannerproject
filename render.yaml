@@ -1,13 +1,9 @@
-databases:
-  - name: mysitedb
-    plan: free
-    databaseName: mysite
-    user: mysite
+
 
 services:
   - type: web
     plan: free
-    name: mysite
+    name: dp_live
     runtime: python
     buildCommand: './build.sh'
     startCommand: 'python -m gunicorn dp_project.asgi:application -k uvicorn.workers.UvicornWorker' 
