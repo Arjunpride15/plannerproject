@@ -4,6 +4,6 @@ dp_project/__pycache__/
 django-shell.ps1
 run.ps1
 daily_planner/__pycache__/
-daily_planner/migrations/
 accounts/__pycache__/
-accounts/migrations/
+daily_planner/migrations/__pycache__
+accounts/migrations/__pycache__
