@@ -10,4 +10,4 @@ python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
 python manage.py migrate
-DJANGO_SUPERUSER_USERNAME=dp_live_admin DJANGO_SUPERUSER_PASSWORD=dp_pass@2905 python manage.py createsuperuser --no-input
+DJANGO_SUPERUSER_USERNAME=dp_live_admin  DJANGO_SUPERUSER_EMAIL=arjunpride15@gmail.com DJANGO_SUPERUSER_PASSWORD=dp_pass@2905 python manage.py createsuperuser --no-input
